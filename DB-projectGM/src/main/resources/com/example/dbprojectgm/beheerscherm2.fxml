@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="356.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbprojectgm.controller.BeheerScherm2Controller">
+   <children>
+      <Text layoutX="16.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Persoonlijke gegevens invullen a.u.b:" wrappingWidth="567.21875">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="LNameFld" layoutX="266.0" layoutY="57.0" promptText="Last name" />
+      <TextField fx:id="FNameFld" layoutX="266.0" layoutY="82.0" promptText="First Name" />
+      <TextField fx:id="emailFld" layoutX="266.0" layoutY="107.0" promptText="e-mal" />
+      <TextField fx:id="PasswordFld" layoutX="266.0" layoutY="157.0" promptText="Password" />
+      <TextField fx:id="UsernameFld" layoutX="266.0" layoutY="132.0" promptText="Username" />
+      <Button fx:id="RegisterBtn" layoutX="273.0" layoutY="233.0" mnemonicParsing="false" text="Register" />
+      <Text fx:id="resultText" layoutX="288.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>

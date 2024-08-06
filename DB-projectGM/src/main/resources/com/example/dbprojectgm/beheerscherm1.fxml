@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbprojectgm.controller.BeheerScherm1Controller">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new Item" />
+      <CheckBox fx:id="chkbx" layoutX="98.0" layoutY="233.0" mnemonicParsing="false" text="IsDigital" />
+      <TextField fx:id="name" layoutX="89.0" layoutY="49.0" promptText="name" />
+      <ComboBox fx:id="year" layoutX="89.0" layoutY="74.0" prefHeight="25.0" prefWidth="161.0" promptText="releaseyear" />
+      <ComboBox fx:id="publi" layoutX="89.0" layoutY="99.0" prefHeight="25.0" prefWidth="161.0" promptText="publisher" />
+      <ComboBox fx:id="genre" layoutX="89.0" layoutY="124.0" prefHeight="25.0" prefWidth="161.0" promptText="Genre" />
+      <ComboBox fx:id="cons" layoutX="89.0" layoutY="149.0" prefHeight="25.0" prefWidth="161.0" promptText="Console" />
+      <TextField fx:id="name1" layoutX="319.0" layoutY="49.0" promptText="name" />
+      <ComboBox fx:id="year1" layoutX="319.0" layoutY="74.0" prefHeight="25.0" prefWidth="161.0" promptText="releaseyear" />
+      <ComboBox fx:id="publi1" layoutX="319.0" layoutY="99.0" prefHeight="25.0" prefWidth="161.0" promptText="publisher" />
+      <ComboBox fx:id="genre1" layoutX="319.0" layoutY="124.0" prefHeight="25.0" prefWidth="161.0" promptText="Genre" />
+      <ComboBox fx:id="type" layoutX="319.0" layoutY="149.0" prefHeight="25.0" prefWidth="161.0" promptText="Type" />
+      <Button fx:id="btn" layoutX="115.0" layoutY="296.0" mnemonicParsing="false" text="Button" />
+      <CheckBox fx:id="chkbx1" layoutX="366.0" layoutY="233.0" mnemonicParsing="false" text="IsDigital" />
+      <Button fx:id="btn1" layoutX="400.0" layoutY="296.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="btn2" layoutX="257.0" layoutY="347.0" mnemonicParsing="false" text="Button" />
+      <Text layoutX="132.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game:" />
+      <Text layoutX="366.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Others:" />
+      <ComboBox fx:id="loc" layoutX="90.0" layoutY="174.0" prefHeight="25.0" prefWidth="161.0" promptText="Location" />
+      <ComboBox fx:id="loc1" layoutX="320.0" layoutY="174.0" prefHeight="25.0" prefWidth="161.0" promptText="Location" />
+      <TextField fx:id="price" layoutX="90.0" layoutY="200.0" promptText="price" />
+      <TextField fx:id="price1" layoutX="320.0" layoutY="200.0" promptText="price" />
+   </children>
+</AnchorPane>
