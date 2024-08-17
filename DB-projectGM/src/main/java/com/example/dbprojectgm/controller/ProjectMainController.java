@@ -1,22 +1,23 @@
 package com.example.dbprojectgm.controller;
 
 import com.example.dbprojectgm.DB_ProjectMain;
+import com.example.dbprojectgm.DatabaseManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.sql.*;
 
-public class ProjectMainController extends MyController{
+import static java.lang.Boolean.TRUE;
+
+public class ProjectMainController  {
     @FXML
     private Button btnBeheerScherm1;
     @FXML
     private Button btnBeheerScherm2;
-    //   @FXML
-    //  private Button btnConfigAttaches;
     @FXML
     private TextField UsernameFld;
 
@@ -26,13 +27,24 @@ public class ProjectMainController extends MyController{
     @FXML
     private Text statustxt;
 
+    public String username;
+
+    public boolean isAdmin;
+
     @FXML
     public void initialize(){
         btnBeheerScherm1.setOnAction(e -> {
             try {
-                showBeheerscherm("1");
+                attemptLogin();
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
+            }
+        });
+        btnBeheerScherm2.setOnAction(event -> {
+            try {
+                showBeheerscherm("2");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         });
 
@@ -40,25 +52,40 @@ public class ProjectMainController extends MyController{
 
     private void attemptLogin() throws IOException {
         statustxt.setText("logging in...");
-        showBeheerscherm("scherm4");
+        username = UsernameFld.toString();
+        String password = PasswordFld.toString();
+        String query = "SELECT Password, Is_Admin FROM Customer WHERE Username = ?";
+        try (Connection connection = DatabaseManager.getConnection();
+             PreparedStatement prepareStatement = connection.prepareStatement(query)){
+            prepareStatement.setString(1,username);
+            ResultSet resultSet = prepareStatement.executeQuery();
+
+            if (resultSet.next()&&resultSet.getString("Password").equals( password)) {
+
+                if (resultSet.getInt("Is_Admin")==0){
+                showBeheerscherm("4");
+                }else{
+
+                    showBeheerscherm("3");
+                }
+            }else{
+                statustxt.setText("log in failed");
+            }
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
+
     }
 
 
     public void showBeheerscherm(String id) throws IOException {
-        var resourceName = "beheer"+id+".fxml";
-        MyController controller = null;
-switch (id){
-    case  "1": controller = new  BeheerScherm1Controller();
-    case  "2": controller = new  BeheerScherm2Controller();
-    case  "3": controller = new  BeheerScherm3Controller();
-    case  "4": controller = new  BeheerScherm4Controller();
-    case  "5": controller = new  BeheerScherm5Controller();
-    case  "6": controller = new  BeheerScherm6Controller();
-        }
+        var resourceName = "beheerscherm"+id+".fxml";
         try {
-            DB_ProjectMain.setScene(resourceName,800,800,controller);
+            DB_ProjectMain.setScene(resourceName,800,800);
         } catch (IOException e){
-            throw new RuntimeException("failed to load stage "+ id,e);
+            throw new RuntimeException("failed to load stage :"+ id,e);
         }
 
     }

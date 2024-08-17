@@ -1,7 +1,7 @@
 package com.example.dbprojectgm;
 
 
-import com.example.dbprojectgm.controller.MyController;
+import com.example.dbprojectgm.models.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,19 +11,26 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
+
+
 public class DB_ProjectMain extends Application {
 
 private static Scene scene;
 
 
-    public static void setScene(String fxmlfile, int width, int height, MyController controller ) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxmlfile));
-        fxmlLoader.setController(controller);
+
+
+    public static void setScene(String fxmlfile, int width, int height  ) throws IOException {
+        URL fxmlLocation = DB_ProjectMain.class.getResource(fxmlfile);
+
+        FXMLLoader fxmlLoader = new FXMLLoader(fxmlLocation);
+
         Parent root = fxmlLoader.load();
         scene.setRoot(root);
         scene.getWindow().setWidth(width);
         scene.getWindow().setHeight(height);
     }
+
 
     @Override
     public void start(Stage stage) throws IOException {

@@ -32,5 +32,6 @@
       <ComboBox fx:id="loc1" layoutX="320.0" layoutY="174.0" prefHeight="25.0" prefWidth="161.0" promptText="Location" />
       <TextField fx:id="price" layoutX="90.0" layoutY="200.0" promptText="price" />
       <TextField fx:id="price1" layoutX="320.0" layoutY="200.0" promptText="price" />
+      <Text fx:id="statusText" layoutX="272.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>

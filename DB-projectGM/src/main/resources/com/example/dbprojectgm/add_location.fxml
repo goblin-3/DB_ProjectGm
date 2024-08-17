@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbprojectgm.controller.AddLocationController">
+    <children>
+        <ComboBox fx:id="cmbLocationType" layoutX="14.0" layoutY="14.0" prefWidth="150.0" promptText="Select Location Type" />
+        <TextField fx:id="txtName" layoutX="14.0" layoutY="52.0" prefWidth="150.0" promptText="Location Name" />
+        <TextField fx:id="txtCashReserve" layoutX="14.0" layoutY="90.0" prefWidth="150.0" promptText="Cash Reserve" />
+        <TextField fx:id="txtAddress" layoutX="14.0" layoutY="128.0" prefWidth="150.0" promptText="Address" />
+        <Button fx:id="btnAddLocation" layoutX="14.0" layoutY="166.0" mnemonicParsing="false" text="Add Location" />
+        <Button fx:id="btnCancel" layoutX="100.0" layoutY="166.0" mnemonicParsing="false" text="Cancel" />
+    </children>
+</AnchorPane>
